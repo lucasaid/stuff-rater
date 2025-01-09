@@ -62,11 +62,11 @@ const App = () => {
         <Range value={joy} setValue={setJoy} />
       </div>
       <div style={{marginBottom: "15px"}}>
-        Does it rare?
+        Is it rare?
         <Range value={rare} setValue={setRare} />
       </div>
       <div style={{marginBottom: "15px"}}>
-        Does it expensive?
+        Is it expensive?
         <Range value={expensive} setValue={setExpensive} />
       </div>
       <div style={{marginBottom: "15px"}}>
@@ -75,7 +75,7 @@ const App = () => {
         <button style={{padding: "6px 10px", backgroundColor: !childhood ? "lightblue" : "transparent"}} onClick={() => setChildhood(false)}>No</button>
       </div>
       <div style={{marginBottom: "15px"}}>
-        Can it be archived? <br/>
+        Can it be archived or easily obtained? <br/>
         <button style={{padding: "6px 10px", backgroundColor: archived ? "lightblue" : "transparent"}} onClick={() => setArchived(true)}>Yes</button>
         <button style={{padding: "6px 10px", backgroundColor: !archived ? "lightblue" : "transparent"}} onClick={() => setArchived(false)}>No</button>
       </div>
