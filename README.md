@@ -1,6 +1,6 @@
 # Stuff Rater
 
-A single-page app for deciding whether to keep or discard personal items — games, collectibles, household objects, and anything else cluttering the shelves. Rate an item across 8 weighted criteria and the app outputs a quality tier (Junk → Legendary) along with a plain-English RETAIN / DISCARD verdict.
+A single-page app for deciding whether to keep or discard personal items, games, collectibles, household objects, and anything else cluttering the shelves. Rate an item across 8 weighted criteria and the app outputs a quality tier (Junk → Legendary) along with a plain-English RETAIN / DISCARD verdict.
 
 ## How it works
 
@@ -17,7 +17,7 @@ Each item is scored across eight criteria (all rated 0–10):
 | Merit | ×1 |
 | Replaceability | ×1 |
 
-The weighted total maps to a tier (Junk, Common, Uncommon, Rare, Epic, Legendary) and a verdict. Hard overrides apply at the extremes — anything with very low joy and engagement is always discarded; anything with very high joy is always kept.
+The weighted total maps to a tier (Junk, Common, Uncommon, Rare, Epic, Legendary) and a verdict. Hard overrides apply at the extremes, anything with very low joy and engagement is always discarded; anything with very high joy is always kept.
 
 ## Requirements
 
@@ -50,7 +50,7 @@ yarn test:e2e                # headless
 yarn test:e2e:ui             # with Playwright's interactive UI
 ```
 
-E2E tests spin up the dev server on port 3001 automatically and use your system-installed Chrome — no separate browser download needed.
+E2E tests spin up the dev server on port 3001 automatically and use your system-installed Chrome.
 
 ## Building for production
 
