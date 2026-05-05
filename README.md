@@ -1,32 +1,61 @@
 # Stuff Rater
 
-Simple app built to allow me to minimize things around the house with a weighted score on things like usefulness or nostalgia.
+A single-page app for deciding whether to keep or discard personal items — games, collectibles, household objects, and anything else cluttering the shelves. Rate an item across 8 weighted criteria and the app outputs a quality tier (Junk → Legendary) along with a plain-English RETAIN / DISCARD verdict.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How it works
 
-## Available Scripts
+Each item is scored across eight criteria (all rated 0–10):
 
-In the project directory, you can run:
+| Criterion | Weight |
+|---|---|
+| Joy | ×3 |
+| Engagement | ×2 |
+| Repeated Value | ×2 |
+| Identity | ×2 |
+| Nostalgia | ×1 |
+| Social Value | ×1 |
+| Merit | ×1 |
+| Replaceability | ×1 |
 
-### `yarn start`
+The weighted total maps to a tier (Junk, Common, Uncommon, Rare, Epic, Legendary) and a verdict. Hard overrides apply at the extremes — anything with very low joy and engagement is always discarded; anything with very high joy is always kept.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Requirements
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Node.js 24+
+- Yarn
+- Chrome (for end-to-end tests)
 
-### `yarn test`
+## Getting started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+yarn install
+yarn start
+```
 
-### `yarn build`
+The dev server runs at [http://localhost:3000](http://localhost:3000).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running tests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Unit tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+yarn test                    # interactive watch mode
+yarn test --watchAll=false   # run once (CI mode)
+```
+
+### End-to-end tests
+
+```bash
+yarn test:e2e                # headless
+yarn test:e2e:ui             # with Playwright's interactive UI
+```
+
+E2E tests spin up the dev server on port 3001 automatically and use your system-installed Chrome — no separate browser download needed.
+
+## Building for production
+
+```bash
+yarn build
+```
+
+Output goes to `/build`, minified and cache-busted, ready to serve as static files.
